@@ -15,9 +15,10 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(
-        180deg,
+    background: radial-gradient(
+        circle at center,
         rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
         rgba(0, 0, 0, 0) 100%
     );
 }
@@ -41,15 +42,23 @@ nav {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(0.6);
+    filter: brightness(0.7);
 }
 
 .hero h1 {
+    mix-blend-mode: exclusion;
+    color: white;
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    /* Remove text-shadow for cleaner blend effect */
+    text-shadow: none;
+}
+
+.hero p {
+    mix-blend-mode: exclusion;
+    color: white;
+    font-size: 1.5rem;
 }
 
 /* Destination Card Style */
