@@ -159,13 +159,25 @@
                 box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
             }
 
-            .featured-destinations {
+            .featured-destinations,
+            .popular-experiences,
+            .travel-inspiration,
+            .testimonials,
+            .newsletter {
                 padding: 8rem 5%;
-                background: var(--secondary-dark);
                 text-align: center;
             }
 
-            .featured-destinations h2 {
+            .featured-destinations,
+            .travel-inspiration {
+                background: var(--secondary-dark);
+            }
+
+            .featured-destinations h2,
+            .popular-experiences h2,
+            .travel-inspiration h2,
+            .testimonials h2,
+            .newsletter h2 {
                 font-family: "Playfair Display", serif;
                 font-size: 3rem;
                 font-weight: 700;
@@ -176,7 +188,8 @@
                 -webkit-text-fill-color: transparent;
             }
 
-            .destinations-grid {
+            .destinations-grid,
+            .experiences-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2.5rem;
@@ -186,7 +199,8 @@
                 padding: 0 2rem;
             }
 
-            .destination-card {
+            .destination-card,
+            .experience-card {
                 position: relative;
                 height: 450px;
                 border-radius: 24px;
@@ -196,23 +210,27 @@
                 transition: all 0.4s ease;
             }
 
-            .destination-card:hover {
+            .destination-card:hover,
+            .experience-card:hover {
                 transform: translateY(-10px) scale(1.02);
                 box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
             }
 
-            .destination-card img {
+            .destination-card img,
+            .experience-card img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.8s ease;
             }
 
-            .destination-card:hover img {
+            .destination-card:hover img,
+            .experience-card:hover img {
                 transform: scale(1.1);
             }
 
-            .destination-info {
+            .destination-info,
+            .experience-info {
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -228,22 +246,71 @@
                 transition: all 0.4s ease;
             }
 
-            .destination-card:hover .destination-info {
+            .destination-card:hover .destination-info,
+            .experience-card:hover .experience-info {
                 transform: translateY(0);
                 opacity: 1;
             }
 
-            .destination-info h3 {
+            .destination-info h3,
+            .experience-info h3 {
                 font-size: 1.6rem;
                 margin-bottom: 0.8rem;
                 color: white;
                 font-weight: 600;
             }
 
-            .destination-info p {
+            .destination-info p,
+            .experience-info p {
                 color: #f5f5f7;
                 font-size: 1.2rem;
                 font-weight: 500;
+            }
+
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .testimonial-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .testimonial-card img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter {
+                background: var(--gradient);
+                color: white;
+            }
+
+            .newsletter h2 {
+                -webkit-text-fill-color: white;
+            }
+
+            .newsletter-form {
+                max-width: 500px;
+                margin: 2rem auto;
+                display: flex;
+                gap: 1rem;
+            }
+
+            .newsletter-form input {
+                flex: 1;
+                padding: 1rem;
+                border: none;
+                border-radius: 8px;
+                font-size: 1rem;
             }
 
             @keyframes fadeInUp {
@@ -316,6 +383,132 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="popular-experiences">
+                <h2>Popular Experiences</h2>
+                <div class="experiences-grid">
+                    <div class="experience-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1540541338287-41700207dee6"
+                            alt="Safari"
+                        />
+                        <div class="experience-info">
+                            <h3>African Safari</h3>
+                            <p>From $2499</p>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
+                            alt="Kayaking"
+                        />
+                        <div class="experience-info">
+                            <h3>Ocean Kayaking</h3>
+                            <p>From $199</p>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1579271723124-12a4d982b39a"
+                            alt="Northern Lights"
+                        />
+                        <div class="experience-info">
+                            <h3>Northern Lights</h3>
+                            <p>From $1299</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="travel-inspiration">
+                <h2>Travel Inspiration</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1512100356356-de1b84283e18"
+                            alt="Peru"
+                        />
+                        <div class="destination-info">
+                            <h3>Machu Picchu, Peru</h3>
+                            <p>Ancient Wonders</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                            alt="Maldives"
+                        />
+                        <div class="destination-info">
+                            <h3>Maldives</h3>
+                            <p>Paradise Found</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2"
+                            alt="Japan"
+                        />
+                        <div class="destination-info">
+                            <h3>Kyoto, Japan</h3>
+                            <p>Cultural Journey</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <h2>What Our Travelers Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+                            alt="Sarah"
+                        />
+                        <h3>Sarah Johnson</h3>
+                        <p>
+                            "An unforgettable experience! The trip exceeded all
+                            my expectations."
+                        </p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                            alt="Michael"
+                        />
+                        <h3>Michael Chen</h3>
+                        <p>
+                            "Professional service and amazing destinations. Will
+                            definitely book again!"
+                        </p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+                            alt="Emma"
+                        />
+                        <h3>Emma Wilson</h3>
+                        <p>
+                            "The attention to detail made our family trip truly
+                            special."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter">
+                <h2>Get Travel Updates</h2>
+                <p>
+                    Subscribe to our newsletter for exclusive deals and travel
+                    tips
+                </p>
+                <form class="newsletter-form">
+                    <input
+                        type="email"
+                        placeholder="Enter your email address"
+                    />
+                    <button class="cta-button">Subscribe</button>
+                </form>
             </section>
         </main>
     </body>
