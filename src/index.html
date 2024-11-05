@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Wanderlust Travel</title>
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap"
             rel="stylesheet"
         />
         <style>
             :root {
-                --primary-dark: #121212;
-                --secondary-dark: #1e1e1e;
-                --accent: #00b4d8;
-                --text: #ffffff;
-                --text-muted: #bbbbbb;
+                --primary-dark: #ffffff;
+                --secondary-dark: #f5f5f7;
+                --accent: #0066cc;
+                --text: #1d1d1f;
+                --text-muted: #86868b;
             }
 
             * {
@@ -26,53 +26,54 @@
             body {
                 background-color: var(--primary-dark);
                 color: var(--text);
-                font-family: "Inter", sans-serif;
+                font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+                -webkit-font-smoothing: antialiased;
             }
 
             header {
                 position: fixed;
                 width: 100%;
                 z-index: 1000;
-                background: linear-gradient(
-                    180deg,
-                    rgba(0, 0, 0, 0.8) 0%,
-                    rgba(0, 0, 0, 0) 100%
-                );
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
 
             nav {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 2rem 5%;
+                padding: 1rem 5%;
+                max-width: 1024px;
+                margin: 0 auto;
             }
 
             .logo {
-                font-size: 1.8rem;
-                font-weight: 700;
-                color: var(--accent);
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: var(--text);
             }
 
             nav ul {
                 display: flex;
                 list-style: none;
-                gap: 2rem;
+                gap: 2.5rem;
             }
 
             nav a {
                 color: var(--text);
                 text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s ease;
+                font-weight: 400;
+                font-size: 0.9rem;
+                transition: opacity 0.3s ease;
             }
 
             nav a:hover {
-                color: var(--accent);
+                opacity: 0.7;
             }
 
             nav a.active {
-                border-bottom: 2px solid var(--accent);
-                padding-bottom: 4px;
+                color: var(--accent);
             }
 
             .hero {
@@ -84,6 +85,7 @@
                 align-items: center;
                 text-align: center;
                 padding: 0 2rem;
+                background-color: var(--primary-dark);
             }
 
             .hero video {
@@ -94,42 +96,49 @@
                 height: 100%;
                 object-fit: cover;
                 z-index: -1;
-                filter: brightness(0.6);
             }
 
             .hero h1 {
-                font-size: 4.5rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                font-size: 3.5rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
             }
 
             .hero p {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 color: var(--text-muted);
                 margin-bottom: 2rem;
+                font-weight: 400;
             }
 
             .cta-button {
                 background: var(--accent);
-                color: var(--text);
-                padding: 1rem 2rem;
-                border: none;
-                border-radius: 5px;
-                font-size: 1.1rem;
-                font-weight: 600;
+                color: white;
+                padding: 0.8rem 2rem;
+                border-radius: 980px;
+                font-size: 1rem;
+                font-weight: 400;
                 cursor: pointer;
-                transition: transform 0.3s ease;
+                transition: all 0.3s ease;
                 text-decoration: none;
             }
 
             .cta-button:hover {
-                transform: translateY(-2px);
+                background-color: #0077ed;
             }
 
             .featured-destinations {
-                padding: 5rem 5%;
+                padding: 8rem 5%;
                 background: var(--secondary-dark);
+                text-align: center;
+            }
+
+            .featured-destinations h2 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
             }
 
             .destinations-grid {
@@ -137,25 +146,28 @@
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2rem;
                 margin-top: 3rem;
+                max-width: 1024px;
+                margin: 3rem auto 0;
             }
 
             .destination-card {
                 position: relative;
                 height: 400px;
-                border-radius: 10px;
+                border-radius: 18px;
                 overflow: hidden;
                 cursor: pointer;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .destination-card:hover {
+                transform: scale(1.02);
             }
 
             .destination-card img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.5s ease;
-            }
-
-            .destination-card:hover img {
-                transform: scale(1.1);
             }
 
             .destination-info {
@@ -166,18 +178,21 @@
                 padding: 2rem;
                 background: linear-gradient(
                     0deg,
-                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(0, 0, 0, 0.7) 0%,
                     rgba(0, 0, 0, 0) 100%
                 );
             }
 
             .destination-info h3 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 margin-bottom: 0.5rem;
+                color: white;
+                font-weight: 500;
             }
 
             .destination-info p {
-                color: var(--text-muted);
+                color: #f5f5f7;
+                font-size: 1.1rem;
             }
         </style>
     </head>
@@ -197,15 +212,11 @@
 
         <main>
             <section class="hero">
-                <video autoplay muted loop class="brightness-75">
+                <video autoplay muted loop></video>
                     <source src="../assets/videos/mount.mp4" type="video/mp4" />
                 </video>
-                <h1 class="blend-exclusion text-white text-7xl font-bold mb-4">
-                    Explore the Unknown
-                </h1>
-                <p class="blend-exclusion text-white text-xl mb-8">
-                    Your journey begins here
-                </p>
+                <h1>Explore the Unknown</h1>
+                <p>Your journey begins here</p>
                 <a href="/destinations" class="cta-button">Discover Now</a>
             </section>
 
