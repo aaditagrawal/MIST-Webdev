@@ -6,10 +6,8 @@ body {
         -apple-system,
         BlinkMacSystemFont,
         sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    @apply bg-gradient-to-br from-white to-gray-50;
 }
 
 nav {
@@ -17,19 +15,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 1024px;
     margin: 0 auto;
-}
-
-nav:hover {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    @apply backdrop-blur-xl bg-white/80;
 }
 
 .hero {
@@ -42,6 +30,7 @@ nav:hover {
     text-align: center;
     padding: 0 2rem;
     background-color: var(--primary-dark);
+    @apply bg-gradient-to-b from-transparent to-black/20;
 }
 
 .hero::before {
@@ -53,6 +42,7 @@ nav:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: -1;
+    @apply backdrop-blur-sm;
 }
 
 .hero video {
@@ -63,10 +53,12 @@ nav:hover {
     height: 100%;
     object-fit: cover;
     z-index: -2;
+    @apply filter brightness-90;
 }
 
 .hero:hover video {
     transform: scale(1);
+    @apply transition-transform duration-700 ease-out;
 }
 
 .hero h1 {
@@ -78,6 +70,7 @@ nav:hover {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease-out;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90;
 }
 
 .hero p {
@@ -86,6 +79,7 @@ nav:hover {
     font-weight: 400;
     margin-bottom: 2.5rem;
     animation: fadeInUp 1s ease-out 0.3s backwards;
+    @apply tracking-tight;
 }
 
 .destination-card {
@@ -96,11 +90,13 @@ nav:hover {
     cursor: pointer;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
+    @apply bg-white/80 backdrop-blur-md hover:shadow-2xl;
 }
 
 .destination-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    @apply transition-all duration-500 ease-out;
 }
 
 @keyframes fadeInUp {
