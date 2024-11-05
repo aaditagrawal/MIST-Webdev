@@ -27,7 +27,7 @@ nav {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.hero {
+hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,6 +42,7 @@ nav {
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: rgb(0 0 0 / 0.2) var(--tw-gradient-to-position);
+  overflow: hidden;
 }
 
 .hero::before {
@@ -69,8 +70,10 @@ nav {
   z-index: -2;
   transform: scale(1);
   transition: transform 0.7s ease-out;
+  opacity: 1;
   --tw-brightness: brightness(.9);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  backface-visibility: hidden;
 }
 
 .hero:hover img {

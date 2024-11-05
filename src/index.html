@@ -342,7 +342,7 @@
         <main>
             <section class="hero">
                 <img
-                    src="https://images.unsplash.com/photo-1500673922987-e212871fec22"
+                    src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80"
                     alt="Mountain landscape"
                     style="
                         position: absolute;
@@ -352,7 +352,10 @@
                         height: 100%;
                         object-fit: cover;
                         z-index: -2;
+                        opacity: 1;
                     "
+                    loading="eager"
+                    onError="this.onerror=null;this.src='https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg';"
                 />
                 <h1>Explore the Unknown</h1>
                 <p>Your journey begins here</p>
