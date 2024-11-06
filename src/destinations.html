@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Destinations - Wanderlust Travel</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-dark: #ffffff;
+                --secondary-dark: #f5f5f7;
+                --accent: #0066cc;
+                --text: #1d1d1f;
+                --text-muted: #86868b;
+                --gradient: linear-gradient(135deg, #0066cc, #5b3cdd);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: var(--primary-dark);
+                color: var(--text);
+                font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            header {
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 5%;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 600;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: -0.5px;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 2.5rem;
+            }
+
+            nav a {
+                color: var(--text);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.95rem;
+                transition: all 0.3s ease;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+            }
+
+            nav a:hover {
+                background: var(--secondary-dark);
+                opacity: 1;
+            }
+
+            nav a.active {
+                background: var(--gradient);
+                color: white;
+            }
+
+            .destinations {
+                padding: 8rem 5%;
+                text-align: center;
+            }
+
+            .destinations h2 {
+                font-family: "Playfair Display", serif;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+                letter-spacing: -0.02em;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .destinations-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2.5rem;
+                margin-top: 3rem;
+                max-width: 1200px;
+                margin: 3rem auto 0;
+                padding: 0 2rem;
+            }
+
+            .destination-card {
+                position: relative;
+                height: 300px;
+                border-radius: 24px;
+                overflow: hidden;
+                cursor: pointer;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease;
+            }
+
+            .destination-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+
+            .destination-card:hover {
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            }
+
+            .destination-info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 2.5rem;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+                transform: translateY(30px);
+                opacity: 0;
+                transition : all 0.4s ease;
+            }
+
+            .destination-card:hover .destination-info {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .destination-info h3 {
+                color: white;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .destination-info p {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 0.75rem 1.5rem;
+                background: var(--accent);
+                color: white;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: background 0.3s ease;
+            }
+
+            .btn:hover {
+                background: darken(var(--accent), 10%);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">Wanderlust</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="/packages">Packages</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="destinations">
+                <h2>Explore Our Destinations</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                      <img src="https://media.istockphoto.com/id/1345426734/photo/eiffel-tower-paris-river-seine-sunset-twilight-france.jpg?s=612x612&w=0&k=20&c=I5rAH5d_-Yyag8F0CKzk9vzMr_1rgkAASGTE11YMh9A=" alt="Destination 1" />
+                      <div class="destination-info">
+                        <h3>Paris, France</h3>
+                        <p>The city of lights and love.</p>
+                        <a href="https://www.google.com/maps/place/Eiffel+Tower,+Champ+de+Mars,+5+Avenue+Gustave+Eiffel,+75007+Paris,+France" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Destination 2" />
+                      <div class="destination-info">
+                        <h3>Tokyo, Japan</h3>
+                        <p>A blend of tradition and modernity.</p>
+                        <a href="https://www.google.com/maps/place/Tokyo,+Japan" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoMXeBaZLVUK9vOOk-vSZw9W7BtzbK-l4tUA&s" alt="Destination 3" />
+                      <div class="destination-info">
+                        <h3>New York, USA</h3>
+                        <p>The city that never sleeps.</p>
+                        <a href="https://www.google.com/maps/place/New+York,+NY,+USA" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNTB4n40ltsjuMpUsaqGl4o9Q0NUUg0A9wMQ&s" alt="Destination 4" />
+                      <div class="destination-info">
+                        <h3>Rio de Janeiro, Brazil</h3>
+                        <p>Famous for its Copacabana beach and Carnival festival.</p>
+                        <a href="https://www.google.com/maps/place/Rio+de+Janeiro,+Brazil" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://www.micato.com/wp-content/uploads/2018/09/cape-town-1-2.jpg" alt="Destination 5" />
+                      <div class="destination-info">
+                        <h3>Cape Town, South Africa</h3>
+                        <p>Known for its stunning landscapes and Table Mountain.</p>
+                        <a href="https://www.google.com/maps/place/Cape+Town,+South+Africa" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://res-1.cloudinary.com/gorealtravel/image/upload/,f_auto,fl_lossy,q_auto,w_1910,h_1176/v1563889832/production/marketing/city/5d3181c870428e0008e0845c/city_main_image/BANGKOK.webp" alt="Destination 6" />
+                      <div class="destination-info">
+                        <h3>Bangkok, Thailand</h3>
+                        <p>A vibrant city known for its ornate temples and street life.</p>
+                        <a href="https://www.google.com/maps/place/Bangkok,+Thailand" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://www.berlinsbi.com/uploads/sites/2/2023/06/web-banner-barcelona.jpg?w=1854&h=1043&crop=1" alt="Destination 7" />
+                      <div class="destination-info">
+                        <h3>Barcelona, Spain</h3>
+                        <p>Famous for its art and architecture, including Gaudí's Sagrada Família.</p>
+                        <a href="https://www.google.com/maps/place/Barcelona,+Spain" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                    <div class="destination-card">
+                      <img src="https://www.agoda.com/wp-content/uploads/2020/03/Burj-Khalifa-Dubai-attractions-UAE-United-Arab-Emirates.jpg" alt="Destination 8" />
+                      <div class="destination-info">
+                        <h3>Dubai, UAE</h3>
+                        <p>Known for luxury shopping, ultramodern architecture, and a lively nightlife scene.</p>
+                        <a href="https://www.google.com/maps/place/Dubai,+United+Arab+Emirates" target="_blank" class="btn">Explore</a>
+                      </div>
+                    </div>
+                  </div>
+            </section>
+        </main>
+    </body>
+</html>
