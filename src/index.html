@@ -312,6 +312,58 @@
                 border-radius: 8px;
                 font-size: 1rem;
             }
+            .animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: #2196F3; /* Set the background color to blue */
+  border-radius: 100px;
+  font-weight: 600;
+  color: #ffffff; /* Change text color to white */
+  box-shadow: 0 0 0 2px #ffffff20;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3; /* Set the same blue color for the span */
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-button:hover {
+  background-color: #ffffff; /* Change background to white on hover */
+  color: #2196F3; /* Change text color to blue on hover */
+  box-shadow: 0 0 0 5px #2195f360;
+}
+
+.animated-button:active {
+  scale: 0.95;
+}
+
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+
+
 
             @keyframes fadeInUp {
                 from {
@@ -331,10 +383,9 @@
                 <div class="logo">Wanderlust</div>
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="/destinations">Destinations</a></li>
-                    <li><a href="/packages">Packages</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -342,7 +393,7 @@
         <main>
             <section class="hero">
                 <img
-                    src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80"
+                    src="https://wallpapers.com/images/hd/green-mountain-etrb0voclap7stl6.jpg"
                     alt="Mountain landscape"
                     style="
                         position: absolute;
@@ -359,7 +410,7 @@
                 />
                 <h1>Explore the Unknown</h1>
                 <p>Your journey begins here</p>
-                <a href="/destinations" class="cta-button">Discover Now</a>
+                <a href="destinations.html" class="cta-button">Discover Now</a>
             </section>
 
             <section class="featured-destinations">
@@ -509,5 +560,23 @@
                 </div>
             </section>
         </main>
+        <footer style="background: var(--accent); padding: 4rem 5%; text-align: center;">
+            <div class="footer-content">
+                <p style="color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    Want to go somewhere you don't see? Our custom packages cover them!
+                </p>
+                <a href="contact.html">
+                    <button class="animated-button">
+                        <span>Click Here!</span>
+                        <span></span>
+                    </button>
+                </a>
+                <p style="margin-top: 2rem;">&copy; 2023 Wanderlust Travel. All rights reserved.</p>
+                <ul style="list-style: none; padding: 0; margin: 1rem 0 0;">
+                    <li style="display: inline; margin-right: 1rem;"><a href="privacy.html" style="color: var(--primary-dark); text-decoration: none;">Privacy Policy</a></li>
+                    <li style="display: inline;"><a href="terms.html" style="color: var(--primary-dark); text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
