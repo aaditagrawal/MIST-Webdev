@@ -1,208 +1,252 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wanderlust Travel - Page Title</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet"
-    />
-    <style>
-        :root {
-            --primary-dark: #ffffff;
-            --secondary-dark: #f5f5f7;
-            --accent: #0066cc;
-            --text: #1d1d1f;
-            --text-muted: #86868b;
-            --gradient: linear-gradient(135deg, #0066cc, #5b3cdd);
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wanderlust Travel - Page Title</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-dark: #ffffff;
+                --secondary-dark: #f5f5f7;
+                --accent: #0066cc;
+                --text: #1d1d1f;
+                --text-muted: #86868b;
+                --gradient: linear-gradient(135deg, #0066cc, #5b3cdd);
+            }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            background-color: var(--primary-dark);
-            color: var(--text);
-            font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+            body {
+                background-color: var(--primary-dark);
+                color: var(--text);
+                font-family:
+                    "SF Pro Display",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                -webkit-font-smoothing: antialiased;
+            }
 
-        header {
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
+            header {
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1024px;
-            margin: 0 auto;
-        }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 5%;
+                max-width: 1024px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+            }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
+            nav:hover {
+                background: rgba(255, 255, 255, 0.95);
+                transform: translateY(2px);
+            }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 600;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: -0.5px;
+                transition: transform 0.3s ease;
+            }
 
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
+            .logo:hover {
+                transform: scale(1.05);
+            }
 
-        nav a:hover {
-            background: var(--secondary-dark);
-            opacity: 1;
-        }
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 2.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-        nav a.active {
-            background: var(--gradient);
-            color: white;
-        }
+            nav a {
+                color: var(--text);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.95rem;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+            }
 
-        /* Add specific styles for each page here */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 2rem;
-            background-color: var(--primary-dark);
-        }
+            nav a:hover {
+                background: rgba(245, 245, 247, 0.8);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
 
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .content {
-        padding: 2rem;
-        max-width: 1024px;
-        margin: 0 auto;
-    }
+            nav a::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: var(--gradient);
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
 
-    .package {
-        background: var(--secondary-dark);
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-    }
+            nav a:hover::after {
+                transform: scaleX(1);
+            }
 
-    .package:hover {
-        transform: translateY(-5px);
-    }
+            nav a.active {
+                background: var(--gradient);
+                color: white;
+                box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            }
 
-    .package h3 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-    }
+            nav a.active:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+            }
 
-    .price {
-        font-size: 1.2rem;
-        color: var(--accent);
-        margin-top: 0.5rem;
-    }
+            /* Add specific styles for each page here */
+            .hero {
+                height: 100vh;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 0 2rem;
+                background-color: var(--primary-dark);
+            }
 
-    .cta-button {
-        display: inline-block;
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background: var(--accent);
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background 0.3s;
-    }
+            .hero h1 {
+                font-family: "Playfair Display", serif;
+                font-size: 4.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .content {
+                padding: 2rem;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
 
-    .cta-button:hover {
-        background: darken(var(--accent), 10%);
-    }
-    .animated-button {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  border: none;
-  font-size: 16px;
-  background-color: #2196F3; /* Set the background color to blue */
-  border-radius: 100px;
-  font-weight: 600;
-  color: #ffffff; /* Change text color to white */
-  box-shadow: 0 0 0 2px #ffffff20;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
+            .package {
+                background: var(--secondary-dark);
+                border-radius: 8px;
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+            }
 
-.animated-button span:last-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: #2196F3; /* Set the same blue color for the span */
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
-}
+            .package:hover {
+                transform: translateY(-5px);
+            }
 
-.animated-button span:first-child {
-  position: relative;
-  z-index: 1;
-}
+            .package h3 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
 
-.animated-button:hover {
-  background-color: #ffffff; /* Change background to white on hover */
-  color: #2196F3; /* Change text color to blue on hover */
-  box-shadow: 0 0 0 5px #2195f360;
-}
+            .price {
+                font-size: 1.2rem;
+                color: var(--accent);
+                margin-top: 0.5rem;
+            }
 
-.animated-button:active {
-  scale: 0.95;
-}
+            .cta-button {
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                background: var(--accent);
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background 0.3s;
+            }
 
-.animated-button:hover span:last-child {
-  width: 150px;
-  height: 150px;
-  opacity: 1;
-}
-main {
-    padding-top: 80px; /* Adjust to the height of your header */
-}
-h2 {
+            .cta-button:hover {
+                background: darken(var(--accent), 10%);
+            }
+            .animated-button {
+                position: relative;
+                display: inline-block;
+                padding: 12px 24px;
+                border: none;
+                font-size: 16px;
+                background-color: #2196f3; /* Set the background color to blue */
+                border-radius: 100px;
+                font-weight: 600;
+                color: #ffffff; /* Change text color to white */
+                box-shadow: 0 0 0 2px #ffffff20;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .animated-button span:last-child {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 20px;
+                height: 20px;
+                background-color: #2196f3; /* Set the same blue color for the span */
+                border-radius: 50%;
+                opacity: 0;
+                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .animated-button span:first-child {
+                position: relative;
+                z-index: 1;
+            }
+
+            .animated-button:hover {
+                background-color: #ffffff; /* Change background to white on hover */
+                color: #2196f3; /* Change text color to blue on hover */
+                box-shadow: 0 0 0 5px #2195f360;
+            }
+
+            .animated-button:active {
+                scale: 0.95;
+            }
+
+            .animated-button:hover span:last-child {
+                width: 150px;
+                height: 150px;
+                opacity: 1;
+            }
+            main {
+                padding-top: 80px; /* Adjust to the height of your header */
+            }
+            h2 {
                 font-family: "Playfair Display", serif;
                 font-size: 3rem;
                 font-weight: 700;
@@ -213,77 +257,118 @@ h2 {
                 -webkit-text-fill-color: transparent;
             }
 
+            /* Other styles remain the same */
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">Wanderlust</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html" class="active">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        /* Other styles remain the same */
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Wanderlust</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="packages.html" class="active">Packages</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <main>
+            <section class="content">
+                <h2>Our Travel Packages</h2>
 
-    <main>
+                <div class="package">
+                    <h3>Island Escape</h3>
+                    <p>
+                        Relax on pristine beaches and enjoy the sun. Perfect for
+                        a peaceful getaway.
+                    </p>
+                    <p class="price">Starting at <strong>$1,299</strong></p>
+                    <a href="book.html" class="cta-button">Book Now</a>
+                </div>
 
-       
+                <div class="package">
+                    <h3>Adventure in the Alps</h3>
+                    <p>
+                        Experience thrilling outdoor activities like skiing and
+                        hiking in breathtaking landscapes.
+                    </p>
+                    <p class="price">Starting at <strong>$1,899</strong></p>
+                    <a href="book.html" class="cta-button">Book Now</a>
+                </div>
 
-        <section class="content">
-            <h2>Our Travel Packages</h2>
-        
-            <div class="package">
-                <h3>Island Escape</h3>
-                <p>Relax on pristine beaches and enjoy the sun. Perfect for a peaceful getaway.</p>
-                <p class="price">Starting at <strong>$1,299</strong></p>
-                <a href="book.html" class="cta-button">Book Now</a>
+                <div class="package">
+                    <h3>Cultural Journey through Asia</h3>
+                    <p>
+                        Explore ancient temples, vibrant markets, and delicious
+                        cuisine on this immersive tour.
+                    </p>
+                    <p class="price">Starting at <strong>$2,499</strong></p>
+                    <a href="book.html" class="cta-button">Book Now</a>
+                </div>
+
+                <div class="package">
+                    <h3>Safari Adventure</h3>
+                    <p>
+                        Get up close with wildlife in their natural habitat on
+                        an unforgettable safari experience.
+                    </p>
+                    <p class="price">Starting at <strong>$3,299</strong></p>
+                    <a href="book.html" class="cta-button">Book Now</a>
+                </div>
+            </section>
+        </main>
+
+        <footer
+            style="
+                background: var(--accent);
+                padding: 4rem 5%;
+                text-align: center;
+            "
+        >
+            <div class="footer-content">
+                <p
+                    style="
+                        color: var(--primary-dark);
+                        font-size: 1.2rem;
+                        margin-bottom: 1.5rem;
+                    "
+                >
+                    Want to go somewhere you don't see? Our custom packages
+                    cover them!
+                </p>
+                <a href="contact.html">
+                    <button class="animated-button">
+                        <span>Click Here!</span>
+                        <span></span>
+                    </button>
+                </a>
+                <p style="margin-top: 2rem">
+                    &copy; 2023 Wanderlust Travel. All rights reserved.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 1rem 0 0">
+                    <li style="display: inline; margin-right: 1rem">
+                        <a
+                            href="privacy.html"
+                            style="
+                                color: var(--primary-dark);
+                                text-decoration: none;
+                            "
+                            >Privacy Policy</a
+                        >
+                    </li>
+                    <li style="display: inline">
+                        <a
+                            href="terms.html"
+                            style="
+                                color: var(--primary-dark);
+                                text-decoration: none;
+                            "
+                            >Terms of Service</a
+                        >
+                    </li>
+                </ul>
             </div>
-        
-            <div class="package">
-                <h3>Adventure in the Alps</h3>
-                <p>Experience thrilling outdoor activities like skiing and hiking in breathtaking landscapes.</p>
-                <p class="price">Starting at <strong>$1,899</strong></p>
-                <a href="book.html" class="cta-button">Book Now</a>
-            </div>
-        
-            <div class="package">
-                <h3>Cultural Journey through Asia</h3>
-                <p>Explore ancient temples, vibrant markets, and delicious cuisine on this immersive tour.</p>
-                <p class="price">Starting at <strong>$2,499</strong></p>
-                <a href="book.html" class="cta-button">Book Now</a>
-            </div>
-        
-            <div class="package">
-                <h3>Safari Adventure</h3>
-                <p>Get up close with wildlife in their natural habitat on an unforgettable safari experience.</p>
-                <p class="price">Starting at <strong>$3,299</strong></p>
-                <a href="book.html" class="cta-button">Book Now</a>
-            </div>
-        </section>
-    </main>
-
-    <footer style="background: var(--accent); padding: 4rem 5%; text-align: center;">
-        <div class="footer-content">
-            <p style="color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 1.5rem;">
-                Want to go somewhere you don't see? Our custom packages cover them!
-            </p>
-            <a href="contact.html">
-                <button class="animated-button">
-                    <span>Click Here!</span>
-                    <span></span>
-                </button>
-            </a>
-            <p style="margin-top: 2rem;">&copy; 2023 Wanderlust Travel. All rights reserved.</p>
-            <ul style="list-style: none; padding: 0; margin: 1rem 0 0;">
-                <li style="display: inline; margin-right: 1rem;"><a href="privacy.html" style="color: var(--primary-dark); text-decoration: none;">Privacy Policy</a></li>
-                <li style="display: inline;"><a href="terms.html" style="color: var(--primary-dark); text-decoration: none;">Terms of Service</a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
